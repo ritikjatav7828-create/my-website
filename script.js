@@ -17,3 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+console.log("RJ Tech website loaded successfully 🚀");
+
