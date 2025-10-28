@@ -106,3 +106,29 @@ Added contact form page
   </form>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Ritik Jatav</title>
+  <style>
+    body {font-family: Arial, sans-serif; background:#eef2f3; text-align:center; padding:50px;}
+    form {background:#fff; padding:20px; max-width:400px; margin:auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+    input, textarea {width:90%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px;}
+    button {background:#0078D7; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;}
+    button:hover {background:#005fa3;}
+    a {display:inline-block; margin-top:20px; color:#0078D7; text-decoration:none;}
+  </style>
+</head>
+<body>
+  <h2>Contact Me 📩</h2>
+  <form action="https://formspree.io/f/xjkpyjpd" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <a href="index.html">⬅ Back to Home</a>
+</body>
+</html>
