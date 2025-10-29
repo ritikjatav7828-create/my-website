@@ -269,6 +269,55 @@ Add Contact Me button
 
 </body>
 </html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Website ke other sections -->
+  <header> ... </header>
+  <main> ... </main>
+
+  <!-- 👇 Ye contact section last me paste karo -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+
+    <p>
+      <a href="tel:8305921216">Call: 8305921216</a> •
+      <a href="mailto:your.email@example.com">Email: your.email@example.com</a>
+    </p>
+
+    <form id="contactForm" method="POST" action="https://formspree.io/f/your-form-id">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone (optional)</label>
+      <input id="phone" name="phone" type="tel">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_subject" value="New contact message from website">
+
+      <button type="submit">Send Message</button>
+      <p id="formStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- JavaScript include -->
+  <script src="script.js"></script>
+</body>
+</html>
 
   <footer>
     <p>© 2025 Ritik Jatav | All Rights Reserved</p>
