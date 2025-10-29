@@ -3,96 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Ritik Jatav</title>
+  <title>Contact | Ritik Jatav</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 40px 10px;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    h2 {
+    h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
 
     p {
       font-size: 1.1rem;
-      margin: 5px 0;
+      margin-bottom: 20px;
     }
 
-    .contact-info {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      margin: 20px 0;
-      text-align: left;
-      transition: transform 0.3s ease;
+    .contact-box {
+      background: rgba(255,255,255,0.15);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
     }
 
-    .contact-info:hover {
-      transform: scale(1.05);
+    .contact-info p {
+      margin: 8px 0;
     }
 
-    a {
+    .contact-info a {
       color: #ffeb3b;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    a:hover {
+    .contact-info a:hover {
       color: #fff;
       text-shadow: 0 0 10px #ffeb3b;
     }
 
-    .social-links {
+    form {
+      display: flex;
+      flex-direction: column;
       margin-top: 20px;
-      font-size: 1.2rem;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #ffeb3b;
+      color: #333;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .social-links {
+      margin-top: 25px;
     }
 
     .social-links a {
       margin: 0 10px;
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
       padding: 10px 15px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      transition: 0.3s;
     }
 
     .social-links a:hover {
       background: #fff;
       color: #2575fc;
     }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 15px;
+      margin-top: 25px;
+    }
+
+    .home-btn {
+      margin-top: 25px;
+      background: rgba(255,255,255,0.25);
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: #fff;
+      color: #2575fc;
+    }
   </style>
 </head>
 <body>
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Let’s connect — I’d love to hear from you!</p>
 
+  <h1>Contact Me</h1>
+  <p>Let's connect — I’d love to hear from you!</p>
+
+  <div class="contact-box">
     <div class="contact-info">
       <p><strong>📞 Phone:</strong> <a href="tel:+918305921216">+91 8305921216</a></p>
       <p><strong>📧 Email:</strong> <a href="mailto:ritikjatav7828@gmail.com">ritikjatav7828@gmail.com</a></p>
       <p><strong>📍 Location:</strong> Indore, India</p>
     </div>
 
+    <!-- Formspree working contact form -->
+    <form action="https://formspree.io/f/xqakrbwv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message 🚀</button>
+    </form>
+
     <div class="social-links">
       <a href="https://wa.me/918305921216" target="_blank">💬 WhatsApp</a>
       <a href="https://www.instagram.com/ritikjatav7828" target="_blank">📸 Instagram</a>
+      <a href="mailto:ritikjatav7828@gmail.com">✉️ Email</a>
     </div>
-  </section>
+
+    <iframe src="https://www.google.com/maps?q=Indore&output=embed"></iframe>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 Back to Home</a>
+
 </body>
 </html>
