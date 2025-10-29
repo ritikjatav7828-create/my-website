@@ -1,198 +1,48 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
-  text-align: center;
-}
-
-header {
-  background: linear-gradient(135deg, #0078D7, #00B4D8);
-  color: white;
-  padding: 80px 20px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background: white;
-  color: #0078D7;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  padding: 40px 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-footer {
-  background: #0078D7;
-  color: white;
-  padding: 20px;
-}
-/* Stylish Contact Me button */
-.btn {
-  display: inline-block;
-  background-color: #0078D7;
-  color: white;
-  padding: 12px 24px;
-  margin-top: 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.contact-section { max-width: 760px; margin: 2rem auto; padding: 1rem; }
-.contact-section h2 { font-size: 1.8rem; margin-bottom: .6rem; text-align: center; }
-.contact-section a { text-decoration: none; font-weight: 600; color: #2563eb; }
-form { display: grid; gap: .6rem; }
-label { font-size: .9rem; margin-bottom: .2rem; }
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-  padding: .6rem; border: 1px solid #ddd; border-radius: 8px; width: 100%;
-}
-button[type="submit"] {
-  padding: .7rem 1rem; border-radius: 10px; border: none; cursor: pointer;
-  font-weight: 700; background: linear-gradient(90deg,#4f46e5,#06b6d4); color: white;
-}
-#formStatus { font-size: .95rem; margin-top: .4rem; color: #064e3b; text-align: center; }
-
-.btn:hover {
-  background-color: #005fa3;
-  transform: scale(1.05);
-}
-Styled Contact Me button
-form {
-  width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-form {
-  width: 320px;
-  margin: 20px auto;
-  padding: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #0056b3;
-}
-body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #f8f9fa;
+  background: #f0f0f0;
 }
 
 header {
-  background-color: #007bff;
+  background: #007bff;
   color: white;
-  padding: 20px 0;
-}
-
-main {
-  padding: 40px;
+  padding: 50px 20px;
 }
 
 .btn {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
+  background: white;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.contact-form {
-  display: inline-block;
-  text-align: left;
+.contact {
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
   max-width: 400px;
-  background: white;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.contact-form input,
-.contact-form textarea {
+input, textarea {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 button {
-  background-color: #007bff;
+  background: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
