@@ -3,43 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ritik Jatav | Brand Promotion & Web Tips</title>
-  <meta name="description" content="Ritik Jatav — blog about brand promotion, web tips, and online marketing strategies.">
-  <meta name="keywords" content="Ritik Jatav, blog, brand promotion, marketing, website, HTML, GitHub, Netlify, tutorials">
-  <meta name="author" content="Ritik Jatav">
+  <title>Ritik Jatav | Home</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RRQD4507"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0RRQD4507');
+  </script>
+
   <style>
-    body { margin:0; font-family:Arial, sans-serif; background-color:#f7f9fc; color:#222; }
-    header { background:linear-gradient(90deg,#6a11cb,#2575fc); color:white; text-align:center; padding:40px 20px; }
-    header h1 { margin:0; font-size:2rem; }
-    nav { margin-top:10px; }
-    nav a { color:white; text-decoration:none; margin:0 12px; font-weight:600; transition:color .3s; }
-    nav a:hover { color:#ffeb3b; }
-    .content { max-width:900px; margin:50px auto; text-align:center; padding:0 20px; }
-    .btn { display:inline-block; padding:10px 20px; background:#2575fc; color:white; border-radius:6px; text-decoration:none; font-weight:700; }
-    .btn:hover { background:#6a11cb; }
-    footer { text-align:center; padding:20px; background:#222; color:white; margin-top:50px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: #ccc;
+      padding: 15px;
+      margin-top: 40px;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Welcome to Ritik Jatav’s Website</h1>
-    <p>Learn brand promotion, blogging, and web tips in one place 🚀</p>
+    <p>Brand Promotion • Blogging • Learning Projects</p>
     <nav>
       <a href="index.html">Home</a>
-      <a href="brands.html">Brands</a>
       <a href="blog.html">Blog</a>
+      <a href="brands.html">Brands</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <main class="content">
-    <h2>Grow Your Online Presence</h2>
-    <p>Explore tutorials, marketing tips, and brand strategies to build your online identity and earn through promotions.</p>
-    <a href="blog.html" class="btn">Visit Blog</a>
+
+  <main>
+    <section class="intro">
+      <h2>Grow your online presence with Ritik Jatav</h2>
+      <p>This is a personal website built step by step using HTML, CSS, GitHub, and Netlify. Explore my blogs, learn how to promote brands online, and see my journey of web learning.</p>
+    </section>
+
+    <section>
+      <h3>Featured Blog</h3>
+      <p>👉 <a href="posts/how-to-promote-brands.html">How to promote brands online — step by step</a></p>
+      <p>👉 <a href="posts/how-to-create-a-blog.html">How to create your own blog using GitHub Pages</a></p>
+    </section>
   </main>
+
   <footer>
     <p>© 2025 Ritik Jatav | All Rights Reserved</p>
+    <p>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 </body>
 </html>
