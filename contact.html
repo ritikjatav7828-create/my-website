@@ -5,172 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Ritik Jatav</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="Contact Ritik Jatav for brand promotions, blog collaborations, and web projects.">
+  <meta name="author" content="Ritik Jatav">
+  <link rel="stylesheet" href="style.css" />
 
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
     }
-
-    body {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 10px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    .contact-box {
-      background: rgba(255,255,255,0.15);
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      max-width: 600px;
-      width: 100%;
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
       text-align: center;
+      padding: 30px 0;
     }
-
-    .contact-info p {
-      margin: 8px 0;
+    header h1 {
+      margin: 0;
     }
-
-    .contact-info a {
-      color: #ffeb3b;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #ffeb3b;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-      gap: 12px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border: none;
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
       border-radius: 10px;
-      outline: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       font-size: 1rem;
     }
-
     button {
-      background: #ffeb3b;
-      color: #333;
+      background: #2575fc;
+      color: white;
+      padding: 12px 25px;
       border: none;
-      padding: 12px;
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s ease;
     }
-
     button:hover {
-      background: #fff;
-      transform: scale(1.05);
+      background: #6a11cb;
     }
-
-    .social-links {
-      margin-top: 25px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 10px 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .social-links a:hover {
-      background: #fff;
-      color: #2575fc;
-    }
-
-    iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-      border-radius: 15px;
-      margin-top: 25px;
-    }
-
-    .home-btn {
-      margin-top: 25px;
-      background: rgba(255,255,255,0.25);
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
+    footer {
+      text-align: center;
+      background: #222;
       color: white;
-      font-weight: bold;
-      transition: 0.3s;
+      padding: 20px;
+      margin-top: 40px;
     }
-
-    .home-btn:hover {
-      background: #fff;
-      color: #2575fc;
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ffeb3b;
     }
   </style>
 </head>
 <body>
 
-  <h1>Contact Me</h1>
-  <p>Let's connect — I’d love to hear from you!</p>
+  <header>
+    <h1>Contact Ritik Jatav</h1>
+    <p>Have a question or collaboration idea? Send a message below 👇</p>
+  </header>
 
-  <div class="contact-box">
-    <div class="contact-info">
-      <p><strong>📞 Phone:</strong> <a href="tel:+918305921216">+91 8305921216</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:ritikjatav7828@gmail.com">ritikjatav7828@gmail.com</a></p>
-      <p><strong>📍 Location:</strong> Indore, India</p>
+  <main>
+    <div class="container">
+      <form name="contact" method="POST" data-netlify="true">
+        <p><input type="text" name="name" placeholder="Your Name" required /></p>
+        <p><input type="email" name="email" placeholder="Your Email" required /></p>
+        <p><textarea name="message" rows="5" placeholder="Your Message" required></textarea></p>
+        <p><button type="submit">Send Message</button></p>
+      </form>
     </div>
+  </main>
 
-    <!-- Formspree working contact form -->
-    <form action="https://formspree.io/f/xqakrbwv" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
-      <button type="submit">Send Message 🚀</button>
-    </form>
-
-    <div class="social-links">
-      <a href="https://wa.me/918305921216" target="_blank">💬 WhatsApp</a>
-      <a href="https://www.instagram.com/ritikjatav7828" target="_blank">📸 Instagram</a>
-      <a href="mailto:ritikjatav7828@gmail.com">✉️ Email</a>
+  <footer>
+    <p>Connect with me:</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
     </div>
-
-    <iframe src="https://www.google.com/maps?q=Indore&output=embed"></iframe>
-  </div>
-
-  <a href="index.html" class="home-btn">🏠 Back to Home</a>
+    <p>© 2025 Ritik Jatav | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
