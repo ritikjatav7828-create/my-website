@@ -6,15 +6,66 @@
   <title>Blog | Ritik Jatav</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .blog-container { max-width: 900px; margin: 40px auto; padding: 0 16px; }
-    .post-list { display: grid; gap:18px; }
-    .post-card { background:#fff; color:#111; padding:18px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.06); }
-    .post-card h3 { margin:0 0 8px; }
-    .post-meta { font-size:0.9rem; color:#666; margin-bottom:10px; }
-    .excerpt { color:#333; line-height:1.6; }
-    a.read-more { display:inline-block; margin-top:12px; color:#007bff; text-decoration:none; font-weight:700; }
-    header.site-header { text-align:center; padding:28px 0; color:white; background:linear-gradient(90deg,#6a11cb,#2575fc); }
-    a.nav { color:white; margin:0 8px; text-decoration:none; font-weight:600; }
+    body {
+      background: #f4f6f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header.site-header {
+      text-align: center;
+      padding: 28px 0;
+      color: white;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+    }
+    a.nav {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .blog-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .post-list {
+      display: grid;
+      gap: 18px;
+    }
+    .post-card {
+      background: #fff;
+      color: #111;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+    .post-card h3 {
+      margin: 0 0 8px;
+    }
+    .post-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .excerpt {
+      color: #333;
+      line-height: 1.6;
+    }
+    a.read-more {
+      display: inline-block;
+      margin-top: 12px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a.read-more:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -34,12 +85,12 @@
       <article class="post-card">
         <h3><a href="posts/how-to-promote-brands.html">How to promote brands online — step by step</a></h3>
         <div class="post-meta">May 1, 2025 • 8 min read</div>
-        <p class="excerpt">Simple step-by-step guide to start promoting other brands online — pick niche, collect images, create posts, and get traffic.</p>
+        <p class="excerpt">
+          Simple step-by-step guide to start promoting other brands online — pick your niche, collect images, create posts, and get traffic.
+        </p>
         <a class="read-more" href="posts/how-to-promote-brands.html">Read full article →</a>
       </article>
     </section>
   </main>
 </body>
 </html>
-<a href="pots/how-to-promote-brands.html">How to Promote Brands</a>
-
