@@ -1,232 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build With Ritik</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Build With Ritik — Premium Hosting</title>
+
+  <!-- Google Font (system fallback if blocked) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    /* -------- BASIC STYLE -------- */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #7c3aed;  /* purple */
+      --accent2: #06b6d4;  /* cyan */
+      --accent3: #f97316;  /* orange */
+      --accent4: #f43f5e;  /* pink/red */
+      --glass-border: rgba(255,255,255,0.06);
+      --white: #ffffff;
     }
 
-    header {
-      background: #001f3f;
-      color: white;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 8%),
+                  radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.08), transparent 8%),
+                  var(--bg);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding-bottom:60px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
+    /* Container */
+    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;}
+    .logo{
+      width:44px;height:44px;border-radius:10px;
+      background: linear-gradient(135deg,var(--accent1), var(--accent2));
+      display:grid;place-items:center;font-weight:800;color:white;
+      box-shadow: 0 6px 18px rgba(12,12,20,0.6);
+    }
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none;}
+    nav a{color:var(--white);text-decoration:none;font-weight:600;opacity:0.95}
+    .cta{
+      background: linear-gradient(90deg,var(--accent3),var(--accent4));
+      border:none;color:white;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;
+      box-shadow: 0 8px 30px rgba(244,63,94,0.14);
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+    /* Mobile menu button */
+    .hamburger{display:none;background:transparent;border:0;color:var(--white);font-size:22px;padding:8px;border-radius:8px}
+    .mobile-menu{display:none}
+
+    /* HERO */
+    .hero{
+      padding:70px 0 50px;
+      display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;
+    }
+    .hero-left h1{
+      font-size:42px;margin:0 0 12px;line-height:1.02;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .tag{
+      display:inline-block;padding:6px 10px;border-radius:22px;background:var(--glass);color:var(--white);font-weight:600;margin-bottom:14px;
+      border:1px solid var(--glass-border);
+    }
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 20px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-outline{
+      border:1px solid rgba(255,255,255,0.08);padding:10px 16px;border-radius:10px;background:transparent;color:var(--white);font-weight:700;cursor:pointer
     }
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #007bff, #00d4ff);
-      color: white;
+    /* Right hero card */
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    .hero-card h3{margin:0 0 8px}
+    .specs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .spec{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+
+    /* PLANS */
+    .plans{padding:40px 0}
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
+    .card{
+      border-radius:14px;padding:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      transition:transform .28s, box-shadow .28s;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
+    .price{font-size:28px;font-weight:800;margin:8px 0}
+    .benefits{color:var(--muted);margin-top:10px;line-height:1.6}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;margin-top:12px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
+
+    /* FEATURE / WHY US */
+    .why{
+      margin-top:40px;padding:28px;border-radius:12px;background: linear-gradient(90deg, rgba(7,10,20,0.4), rgba(7,10,20,0.25));
+      display:flex;gap:20px;align-items:center;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .why li{color:var(--muted);margin:8px 0;font-weight:600}
+    .why h3{margin:0 0 8px}
+
+    /* CONTACT */
+    .contact{margin-top:36px;padding:22px;border-radius:12px;background:linear-gradient(90deg, rgba(244,63,94,0.06), rgba(255,184,28,0.04));border:1px solid rgba(255,255,255,0.03)}
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center}
+    .contact .form input, .contact .form textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);margin-top:10px;font-weight:600
+    }
+    .send{margin-top:12px;padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent3),var(--accent4));color:white;font-weight:800;cursor:pointer}
+
+    /* FOOTER */
+    footer{margin-top:48px;padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    /* RESPONSIVE */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 360px}
+      .plans-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      .logo{width:40px;height:40px}
+      nav ul{display:none}
+      .hamburger{display:inline-block}
+      .hero{grid-template-columns:1fr;gap:18px;padding:36px 0}
+      .hero-left h1{font-size:30px}
+      .hero p{font-size:16px}
+      .plans-grid{grid-template-columns:1fr}
+      .hero-card{order:2}
+      .mobile-menu{display:block;padding:12px 0}
+      .mobile-menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--white);text-decoration:none;margin:6px 0;background:transparent}
     }
 
-    .hero button {
-      padding: 10px 25px;
-      font-size: 16px;
-      border: none;
-      background: #fff;
-      color: #007bff;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* -------- PLANS SECTION -------- */
-    .plans {
-      text-align: center;
-      padding: 80px 20px;
-      background: #ffffff;
-    }
-
-    .plan-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .plan {
-      background: #f0f0f5;
-      padding: 30px;
-      width: 280px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .plan:hover {
-      transform: translateY(-10px);
-    }
-
-    .plan h3 {
-      color: #007bff;
-    }
-
-    .plan.popular {
-      background: #007bff;
-      color: white;
-    }
-
-    .plan.popular button {
-      background: white;
-      color: #007bff;
-    }
-
-    /* -------- WHY US SECTION -------- */
-    .why-us {
-      background: #001f3f;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .why-us ul {
-      list-style: none;
-      padding: 0;
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .why-us li {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    /* -------- CONTACT SECTION -------- */
-    .contact {
-      background: #f8f9fa;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .contact h2 {
-      margin-bottom: 20px;
-      color: #001f3f;
-    }
-
-    .contact p {
-      font-size: 18px;
-      margin: 8px 0;
-    }
-
-    .contact a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    /* -------- FOOTER -------- */
-    footer {
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #00d4ff;
-      text-decoration: none;
-    }
+    /* small animation */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .7s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <h1>Build With Ritik</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Managed Servers</a></li>
-        <li><a href="#">Managed VPS</a></li>
-        <li><a href="#">Budget Servers</a></li>
-        <li><a href="#">Domains</a></li>
-        <li><a href="#">Support</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h2>Take Your Business Online With Fully Managed Web Hosting</h2>
-    <p>Fast, Secure, Powerful Hosting. Focus on your business, we handle the rest.</p>
-    <button>Get Started</button>
-  </section>
-
-  <!-- HOSTING PLANS -->
-  <section class="plans">
-    <h2>Our Hosting Plans</h2>
-    <div class="plan-container">
-      <div class="plan">
-        <h3>Starter Plan</h3>
-        <p>Perfect for beginners starting their first website.</p>
-        <h4>$5 / month</h4>
-        <button>Get Started</button>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <div style="font-size:15px;opacity:0.95">Build With</div>
+          <div style="font-size:18px;font-weight:800">Ritik</div>
+        </div>
       </div>
 
-      <div class="plan popular">
-        <h3>Business Plan</h3>
-        <p>Best for small to medium-sized businesses.</p>
-        <h4>$15 / month</h4>
-        <button>Get Started</button>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-      <div class="plan">
-        <h3>Enterprise Plan</h3>
-        <p>For large companies needing extra performance.</p>
-        <h4>$30 / month</h4>
-        <button>Get Started</button>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="cta">Get Started</button>
+        <button class="hamburger" id="hambBtn" aria-label="menu">☰</button>
       </div>
     </div>
-  </section>
 
-  <!-- WHY CHOOSE US -->
-  <section class="why-us">
-    <h2>Why Choose Build With Ritik?</h2>
-    <ul>
-      <li>⚡ Super-fast loading servers</li>
-      <li>🔒 Secure and reliable hosting</li>
-      <li>📞 24/7 customer support</li>
-      <li>💰 Affordable pricing</li>
-    </ul>
-  </section>
+    <!-- mobile menu -->
+    <div class="container mobile-menu" id="mobileMenu" style="display:none">
+      <a href="#plans">Plans</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-  <!-- CONTACT US -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="#">+91 90000-00000</a></p>
-    <p>✉️ Email: <a href="#">contact@buildwithritik.com</a></p>
-    <p>📍 Address: Indore, Madhya Pradesh, India</p>
-  </section>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" style="margin-top:18px">
+      <div class="hero-left fade-up" style="--delay:0s">
+        <div class="tag">Premium • Managed • Fast</div>
+        <h1>Colorful, Powerful Hosting — Made For Growth</h1>
+        <p>Build With Ritik provides blazing fast servers, enterprise-grade security, and 24/7 support — packaged in a modern, premium experience.</p>
+        <div class="hero-actions">
+          <button class="cta">Start Free Trial</button>
+          <button class="btn-outline">See Plans</button>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Build With Ritik. All rights reserved.</p>
-    <p>Made with ❤️ by Ritik Jatav</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </footer>
+        <!-- some quick stats -->
+        <div style="display:flex;gap:14px;margin-top:18px;flex-wrap:wrap">
+          <div style="background:var(--glass);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+            <div style="font-weight:800;font-size:18px">1.2M+</div>
+            <div style="color:var(--muted);font-weight:700">Happy Users</div>
+          </div>
+          <div style="background:linear-gradient(90deg,var(--accent2),var(--accent1));padding:10px 12px;border-radius:12px;color:#fff">
+            <div style="font-weight:800;font-size:18px">99.99%</div>
+            <div style="font-weight:700">Uptime SLA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card fade-up" style="--delay:.05s">
+        <h3>Best For</h3>
+        <p style="color:var(--muted);margin:6px 0 12px">Websites, E-commerce, SaaS, & Agencies</p>
+
+        <div class="specs">
+          <div class="spec">NVMe Storage</div>
+          <div class="spec">LiteSpeed</div>
+          <div class="spec">Free SSL</div>
+          <div class="spec">Daily Backups</div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+          <div style="color:var(--muted)">Starts from</div>
+          <div style="font-weight:800;font-size:20px">₹399 / month</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="plans fade-up">
+      <h2 style="margin:0;font-size:28px">Our Hosting Plans</h2>
+      <p style="color:var(--muted);margin-top:8px">Flexible pricing for all stages — from personal projects to high-traffic businesses.</p>
+
+      <div class="plans-grid" style="margin-top:18px">
+        <div class="card fade-up">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800">Starter</div>
+            <div class="pill">Popular</div>
+          </div>
+          <div class="price">₹399 <span style="font-size:14px;font-weight:600;color:var(--muted)">/mo</span></div>
+          <div class="benefits">
+            <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted)">
+              <li>1 Website • 10GB NVMe</li>
+              <li>Free SSL • Daily Backups</li>
+              <li>1-click Installer</li>
+            </ul>
+          </div>
+          <div style="margin-top:14px">
+            <button class="cta">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card fade-up" style="background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06));border:1px solid rgba(124,58,237,0.18)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800">Business</div>
+            <div class="pill">Best Value</div>
+          </div>
+          <div class="price">₹999 <span style="font-size:14px;font-weight:600;color:var(--muted)">/mo</span></div>
+          <div class="benefits">
+            <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted)">
+              <li>5 Websites • 50GB NVMe</li>
+              <li>Priority Support • Staging</li>
+              <li>Optimized Caching</li>
+            </ul>
+          </div>
+          <div style="margin-top:14px">
+            <button class="cta">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card fade-up">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:800">Enterprise</div>
+            <div class="pill">Custom</div>
+          </div>
+          <div class="price">Custom</div>
+          <div class="benefits">
+            <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted)">
+              <li>Dedicated Resources</li>
+              <li>Managed Migrations</li>
+              <li>Dedicated Support</li>
+            </ul>
+          </div>
+          <div style="margin-top:14px">
+            <button class="cta">Contact Sales</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- why -->
+      <div id="why" class="why fade-up" style="margin-top:20px">
+        <div style="flex:1">
+          <h3 style="margin-bottom:6px">Why Choose Build With Ritik?</h3>
+          <p style="color:var(--muted);margin:0 0 8px">A colorful, premium platform built to scale your online business — with enterprise features and awesome UX.</p>
+          <ul style="padding-left:18px;margin-top:8px">
+            <li>⚡ Blazing NVMe & HTTP/3 support</li>
+            <li>🔒 Enterprise-grade security</li>
+            <li>📞 24/7 Indian support</li>
+            <li>♻️ Easy staging & backups</li>
+          </ul>
+        </div>
+        <div style="width:200px;text-align:right">
+          <div style="font-weight:800;font-size:20px">Trusted by</div>
+          <div style="font-size:28px;font-weight:900;margin-top:8px">1.2M+</div>
+          <div style="color:var(--muted);margin-top:6px">customers worldwide</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact fade-up">
+      <div class="contact-grid">
+        <div class="form">
+          <h3 style="margin:0">Get in touch</h3>
+          <p style="color:var(--muted);margin-top:6px">Questions about plans or a custom quote? Send a message and we'll respond within 24 hours.</p>
+
+          <input placeholder="Your name" />
+          <input placeholder="Your email or phone" />
+          <textarea rows="4" placeholder="How can we help?"></textarea>
+          <button class="send">Send Message</button>
+        </div>
+
+        <div>
+          <h3 style="margin:0 0 8px">Contact Info</h3>
+          <p style="color:var(--muted);margin:6px 0">📞 Phone: <strong style="color:var(--white)">+91 90000-00000</strong></p>
+          <p style="color:var(--muted);margin:6px 0">✉️ Email: <strong style="color:var(--white)">contact@buildwithritik.com</strong></p>
+          <p style="color:var(--muted);margin:6px 0">📍 Indore, India</p>
+
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <div style="padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));font-weight:700">Live Chat</div>
+            <div style="padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent3),var(--accent4));font-weight:700">Schedule Call</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div>© <strong>Build With Ritik</strong> — All rights reserved.</div>
+        <div style="color:var(--muted)">Made with ❤️ by Ritik Jatav</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const hamb = document.getElementById('hambBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let open = false;
+    hamb && hamb.addEventListener('click', ()=>{
+      open = !open;
+      mobileMenu.style.display = open ? 'block' : 'none';
+      hamb.textContent = open ? '✕' : '☰';
+    });
+
+    // Simple fade-up on load
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el, i)=>{
+        el.style.animationDelay = (i*0.06) + 's';
+        el.classList.add('fade-up');
+      });
+    });
+  </script>
 </body>
 </html>
