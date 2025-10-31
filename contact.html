@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services & Plans — Ritik Jatav</title>
+  <title>Contact — Ritik Jatav</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,48 +11,37 @@
     <div class="container nav-row">
       <a class="brand" href="index.html">Ritik Jatav</a>
       <button id="nav-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-      <nav id="nav">
-        <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="brands.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="btn-outline">Contact</a></li></ul>
-      </nav>
+      <nav id="nav"><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="brands.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="btn-outline">Contact</a></li></ul></nav>
     </div>
   </header>
 
   <main class="container" style="padding-top:36px;padding-bottom:48px;">
-    <h1>Services & Plans</h1>
-    <div class="plans-grid">
-      <div class="plan">
-        <h3>Starter</h3>
-        <p class="price">₹199<span>/mo</span></p>
-        <ul>
-          <li>1 Website</li>
-          <li>10 GB Storage</li>
-          <li>Basic Support</li>
-        </ul>
-        <a href="contact.html" class="btn">Get Starter</a>
-      </div>
+    <h1>Contact</h1>
+    <p>Send a message — we typically reply within 24 hours.</p>
 
-      <div class="plan featured">
-        <h3>Pro</h3>
-        <p class="price">₹499<span>/mo</span></p>
-        <ul>
-          <li>5 Websites</li>
-          <li>50 GB Storage</li>
-          <li>Priority Support</li>
-        </ul>
-        <a href="contact.html" class="btn">Choose Pro</a>
-      </div>
-
-      <div class="plan">
-        <h3>Business</h3>
-        <p class="price">Custom</p>
-        <ul>
-          <li>Custom Resources</li>
-          <li>Managed Onboarding</li>
-          <li>Dedicated Support</li>
-        </ul>
-        <a href="contact.html" class="btn">Talk to Sales</a>
-      </div>
-    </div>
+    <form id="contact-form" class="contact-form" method="POST" action="#">
+      <label>
+        <span>Your name</span><br>
+        <input type="text" name="name" required placeholder="Your name" />
+      </label>
+      <br><br>
+      <label>
+        <span>Email</span><br>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </label>
+      <br><br>
+      <label>
+        <span>Phone (optional)</span><br>
+        <input type="tel" name="phone" placeholder="+91 9XXXXXXXXX" />
+      </label>
+      <br><br>
+      <label>
+        <span>Message</span><br>
+        <textarea name="message" rows="6" required placeholder="Describe your project..."></textarea>
+      </label>
+      <br><br>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
   </main>
 
   <footer class="site-footer"><div class="container footer-grid"><div class="footer-left"><a class="brand" href="index.html">Ritik Jatav</a></div><div class="footer-right"><p class="muted">© <span id="year"></span> Ritik Jatav</p></div></div></footer>
