@@ -1,40 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Ritik Jatav</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RRQD4507"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D0RRQD4507');
-  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Ritik Jatav</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>About Ritik Jatav</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="blog.html">Blog</a> |
-      <a href="brands.html">Brands</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">Ritik Jatav</a>
+      <button id="nav-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <nav id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="brands.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html" class="btn-outline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Who Am I?</h2>
-      <p>I'm Ritik Jatav, a passionate learner exploring GitHub, Linux commands, and web hosting. I love creating small web projects step-by-step and sharing my journey online.</p>
-    </section>
+  <main class="container" style="padding-top:36px;padding-bottom:48px;">
+    <h1>About Ritik Jatav</h1>
+    <div class="about-grid">
+      <div class="about-left">
+        <img src="ritik.jpg" alt="Ritik Jatav" class="about-photo" />
+      </div>
+      <div class="about-right">
+        <h2>Who we are</h2>
+        <p>We help startups and creators launch fast, scale safely, and convert visitors into customers. Our expertise includes server management, landing page optimization, and creative campaigns.</p>
+
+        <h3>Why choose us</h3>
+        <ul>
+          <li>Personalized service</li>
+          <li>Security-first approach</li>
+          <li>Performance & uptime guarantees</li>
+        </ul>
+        <p><a class="btn" href="contact.html">Work with us</a></p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 Ritik Jatav | All Rights Reserved</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-left"><a class="brand" href="index.html">Ritik Jatav</a></div>
+      <div class="footer-right"><p class="muted">© <span id="year"></span> Ritik Jatav</p></div>
+    </div>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
