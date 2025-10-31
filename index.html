@@ -1,85 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build with RitikJatav | Proonal Hosting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Build with RitikJatav — Brand Promotion</title>
+  <meta name="description" content="Build with RitikJatav — Brand promotion, social ads, creative campaigns" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: #0b0c10; color: #fff; }
-    header { background: linear-gradient(90deg, #0b132b, #1c2541); padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; }
-    header h1 { font-size: 1.8rem; font-weight: 600; color: #66fcf1; }
-    header nav a { color: #fff; margin-left: 25px; text-decoration: none; font-weight: 500; }
-    header nav a:hover { color: #66fcf1; }
+    :root{
+      --bg:#071026;
+      --muted:#9aa5b1;
+      --accent:#06b6d4; /* teal */
+      --accent-2:#7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.03);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:#e6eef6}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
 
-    .hero { text-align: center; padding: 120px 20px; background: linear-gradient(160deg, #1f2833, #0b0c10); }
-    .hero h2 { font-size: 2.8rem; margin-bottom: 20px; color: #66fcf1; }
-    .hero p { color: #c5c6c7; font-size: 1.1rem; margin-bottom: 40px; }
-    .hero button { background: #45a29e; color: #fff; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1rem; cursor: pointer; }
-    .hero button:hover { background: #66fcf1; color: #000; }
+    /* VIDEO HERO */
+    .hero-wrap{position:relative;overflow:hidden;border-radius:12px;height:62vh;min-height:420px;display:flex;align-items:center}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45);}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(4,6,10,0.35), rgba(4,6,20,0.6));}
+    header{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#041023}
+    nav a{margin-left:18px;color:var(--muted);font-weight:600}
 
-    .plans { padding: 80px 40px; text-align: center; }
-    .plans h3 { font-size: 2.2rem; margin-bottom: 50px; color: #66fcf1; }
-    .plan-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-    .plan { background: #1f2833; padding: 40px 30px; border-radius: 12px; width: 280px; transition: 0.3s; }
-    .plan:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
-    .plan h4 { font-size: 1.5rem; margin-bottom: 10px; color: #45a29e; }
-    .plan p { font-size: 0.95rem; color: #c5c6c7; margin-bottom: 25px; }
-    .price { font-size: 1.8rem; color: #66fcf1; margin-bottom: 20px; }
-    .plan button { background: #45a29e; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; cursor: pointer; }
-    .plan button:hover { background: #66fcf1; color: #000; }
+    .hero-content{position:relative;z-index:6;padding:36px 48px;display:flex;gap:28px;align-items:center}
+    .hero-left{max-width:720px}
+    .hero-left h1{font-size:40px;line-height:1.02;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041023}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef6}
 
-    footer { text-align: center; padding: 30px; background: #0b132b; color: #c5c6c7; margin-top: 60px; }
+    .hero-right{min-width:320px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .hero-right h4{margin:0 0 8px}
+    .stat{display:flex;gap:12px;align-items:center;margin:8px 0}
+
+    /* SERVICES */
+    section{padding:34px 0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .service h4{margin-bottom:8px}
+    .service p{color:var(--muted);font-size:14px}
+
+    /* PLANS */
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .plan{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .price{font-size:24px;font-weight:800;margin:8px 0}
+
+    /* TESTIMONIALS */
+    .testimonials{display:flex;gap:14px;flex-wrap:wrap}
+    .tcard{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px;min-width:260px}
+
+    /* CONTACT */
+    .contact{display:flex;gap:18px;align-items:flex-start}
+    .contact form{flex:1}
+    .contact .info{min-width:260px;padding:16px;background:var(--glass);border-radius:10px}
+
+    footer{margin-top:24px;padding:20px;text-align:center;color:var(--muted)}
+
+    @media (max-width:980px){
+      .hero-wrap{height:56vh}
+      .hero-content{flex-direction:column;align-items:flex-start;padding:24px}
+      .services,.plans{grid-template-columns:1fr}
+      nav a{display:none}
+    }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Proonal Hosting</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Plans</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Fast, Reliable, and Affordable Hosting</h2>
-    <p>Empower your business with lightning‑fast web hosting powered by RitikJatav.</p>
-    <button>Get Started</button>
-  </section>
-
-  <section class="plans">
-    <h3>Our Hosting Plans</h3>
-    <div class="plan-cards">
-      <div class="plan">
-        <h4>Basic</h4>
-        <p>Perfect for personal projects and small websites.</p>
-        <div class="price">₹99/mo</div>
-        <button>Choose Plan</button>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">RJ</div>
+        <div>
+          <div style="font-weight:800">Build with RitikJatav</div>
+          <div style="font-size:12px;color:var(--muted)">Brand Promotion & Creative Campaigns</div>
+        </div>
       </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#plans">Plans</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-      <div class="plan">
-        <h4>Professional</h4>
-        <p>Ideal for freelancers and small businesses.</p>
-        <div class="price">₹199/mo</div>
-        <button>Choose Plan</button>
+    <section class="hero-wrap">
+      <!-- Replace the src with your marketing ad video (mp4). Keep small size (~2-6MB) for fast load -->
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+        <source src="assets/marketing-ads.mp4" type="video/mp4">
+        <!-- Fallback image -->
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1>Promote your brand. Reach millions.</h1>
+          <p>High-impact ad campaigns, social-first creative, and performance marketing that grows attention and conversions.</p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact">Get a Quote</a>
+            <a class="btn btn-ghost" href="#plans">View Plans</a>
+          </div>
+
+          <div style="margin-top:18px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;color:var(--muted);font-size:13px;max-width:560px">
+            <strong>What we do:</strong> Social ads, video promos, influencer campaigns, website promotions, and analytics‑driven growth.
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <h4>Quick Stats</h4>
+          <div class="stat"><strong>500+</strong><div style="color:var(--muted)">Campaigns run</div></div>
+          <div class="stat"><strong>20M+</strong><div style="color:var(--muted)">Impressions delivered</div></div>
+          <div class="stat"><strong>95%</strong><div style="color:var(--muted)">Client retention</div></div>
+        </aside>
       </div>
+    </section>
 
-      <div class="plan">
-        <h4>Enterprise</h4>
-        <p>For growing teams and large organizations.</p>
-        <div class="price">₹499/mo</div>
-        <button>Choose Plan</button>
+    <section id="services">
+      <h3>Our Services</h3>
+      <div class="services">
+        <div class="service">
+          <h4>Video Ads</h4>
+          <p>Short, high-converting video ads for social platforms — crafted to grab attention in 3 seconds.</p>
+        </div>
+        <div class="service">
+          <h4>Social Media Campaigns</h4>
+          <p>Strategy, creatives and paid ads across Instagram, Facebook, and YouTube.</p>
+        </div>
+        <div class="service">
+          <h4>Website Promotion</h4>
+          <p>SEO, content distribution and paid channels to drive targeted visitors and conversions.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    © 2025 Proonal Hosting | Build with RitikJatav
-  </footer>
+    <section id="plans">
+      <h3>Plans</h3>
+      <div class="plans">
+        <div class="plan">
+          <h4>Starter</h4>
+          <div class="price">₹4,999</div>
+          <p style="color:var(--muted)">Best for small brands starting with social ads.</p>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>1 video ad (15s)</li>
+            <li>Campaign setup</li>
+            <li>Basic reporting</li>
+          </ul>
+        </div>
 
+        <div class="plan">
+          <h4>Growth</h4>
+          <div class="price">₹14,999</div>
+          <p style="color:var(--muted)">For brands ready to scale.</p>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>3 video ads + creatives</li>
+            <li>Paid media management</li>
+            <li>Advanced analytics</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <h4>Brand</h4>
+          <div class="price">₹39,999</div>
+          <p style="color:var(--muted)">Full-service brand promotion & creatives.</p>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>End-to-end campaigns</li>
+            <li>Influencer collaborations</li>
+            <li>Dedicated account manager</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h3>What our clients say</h3>
+      <div class="testimonials">
+        <div class="tcard">
+          <strong>Akash — Founder</strong>
+          <p style="color:var(--muted)">"Campaigns doubled our traffic and brought immediate sales. Highly recommended."</p>
+        </div>
+        <div class="tcard">
+          <strong>Sneha — Marketing Head</strong>
+          <p style="color:var(--muted)">"Creative team understood the brand perfectly. Engagement went up 3x."</p>
+        </div>
+        <div class="tcard">
+          <strong>Rohan — E‑commerce</strong>
+          <p style="color:var(--muted)">"Fast, reliable and results-focused — great ROI."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact / Get started</h3>
+      <div class="contact">
+        <form onsubmit="handleForm(event)">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input name="name" placeholder="Your name" required style="flex:1;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+            <input name="email" placeholder="Email" required style="flex:1;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+          </div>
+          <div style="margin-top:10px">
+            <textarea name="message" placeholder="Tell us about your brand / campaign" rows="5" required style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></textarea>
+          </div>
+          <div style="margin-top:10px;display:flex;gap:10px">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <a class="btn btn-ghost" href="mailto:hello@ritikjatav.com">Email: hello@ritikjatav.com</a>
+            <a class="btn btn-ghost" href="https://wa.me/918305921216?text=Hello%20Ritik%2C%20I%20want%20to%20promote%20my%20brand" target="_blank">WhatsApp</a>
+          </div>
+          <div id="formStatus" style="color:var(--muted);margin-top:8px;font-size:13px"></div>
+        </form>
+
+        <div class="info">
+          <strong>Quick contact</strong>
+          <div style="color:var(--muted);margin-top:8px">Email: <a href="mailto:hello@ritikjatav.com">hello@ritikjatav.com</a></div>
+          <div style="color:var(--muted);margin-top:6px">WhatsApp: <a href="https://wa.me/918305921216">+91 83059 21216</a></div>
+          <div style="color:var(--muted);margin-top:12px;font-size:13px">Or click Get a Quote to send a message and we'll reply within 24 hours.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="yr"></span> Build with RitikJatav — Brand Promotion
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function handleForm(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending...';
+      // Placeholder: integrate with Formspree/EmailJS/Netlify forms later
+      setTimeout(()=>{status.textContent = 'Thanks — we received your message (demo).'; e.target.reset();},800);
+    }
+  </script>
 </body>
 </html>
