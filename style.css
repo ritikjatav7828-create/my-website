@@ -3,8 +3,8 @@
   --bg-1: #06253b;
   --card: #0b2b45;
   --muted: rgba(255,255,255,0.75);
-  --accent-a: #0ea5e9; /* cyan-blue */
-  --accent-b: #075985; /* deep blue */
+  --accent-a: #0ea5e9;
+  --accent-b: #075985;
   --glass: rgba(255,255,255,0.03);
   --radius: 12px;
   --container: 1100px;
