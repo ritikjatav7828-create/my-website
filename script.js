@@ -11,8 +11,7 @@ navToggle && navToggle.addEventListener('click', () => {
 document.getElementById('year')?.textContent = new Date().getFullYear();
 
 // Contact form handling with Formspree fallback
-// Replace FORM_ENDPOINT with your Formspree endpoint to receive emails.
-const FORM_ENDPOINT = "https://formspree.io/f/yourFormID"; // <-- replace
+const FORM_ENDPOINT = "https://formspree.io/f/yourFormID"; // <-- replace with your Formspree ID
 
 async function handleContactForm(e) {
   e.preventDefault();
@@ -24,7 +23,6 @@ async function handleContactForm(e) {
 
   const data = new FormData(form);
 
-  // If FORM_ENDPOINT replaced, send; else just redirect to thankyou
   if (FORM_ENDPOINT && !FORM_ENDPOINT.includes('yourFormID')) {
     try {
       const res = await fetch(FORM_ENDPOINT, {
