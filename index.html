@@ -15,13 +15,11 @@
       --accent1:#7c3aed; /* purple */
       --accent2:#06b6d4; /* cyan */
       --accent3:#f97316; /* orange */
-      --glass: rgba(255,255,255,0.6);
       --shadow: 0 8px 30px rgba(16,24,40,0.06);
       --radius:14px;
       --max-width:1100px;
     }
 
-    /* Reset & base */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -36,7 +34,7 @@
     }
     .container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
 
-    /* Header */
+    /* HEADER */
     header{
       position:sticky;top:0;z-index:60;
       background: rgba(255,255,255,0.85);
@@ -59,21 +57,16 @@
       box-shadow: var(--shadow);
     }
 
-    .hamburger{display:none;background:transparent;border:0;font-size:22px;padding:8px;border-radius:8px;cursor:pointer}
-    .mobile-menu{display:none}
-
-    /* HERO */
-    .hero{padding:56px 0 30px;display:grid;grid-template-columns:1fr 380px;gap:34px;align-items:center}
-    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg, rgba(124,58,237,0.08), rgba(6,182,212,0.06));color:var(--accent1);font-weight:700;margin-bottom:12px}
-    h1{font-size:40px;margin:0 0 12px;line-height:1.02;color:#071132}
-    .lead{color:var(--muted);font-size:17px;margin:0 0 18px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-
     .btn-outline{
       padding:10px 14px;border-radius:10px;border:1px solid rgba(15,23,36,0.06);background:white;font-weight:700;cursor:pointer;
     }
 
-    /* Right hero card */
+    /* HERO */
+    .hero{padding:56px 0 30px;display:grid;grid-template-columns:1fr 380px;gap:34px;align-items:center}
+    h1{font-size:40px;margin:0 0 12px;line-height:1.02;color:#071132}
+    .lead{color:var(--muted);font-size:17px;margin:0 0 18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
     .hero-card{
       background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid rgba(15,23,36,0.04);
       box-shadow: var(--shadow);
@@ -93,7 +86,7 @@
     .benefits{color:var(--muted);margin-top:10px;line-height:1.6}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;margin-top:12px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
 
-    /* WHY / FEATURE */
+    /* WHY */
     .why{margin-top:28px;padding:22px;border-radius:12px;background:linear-gradient(90deg, rgba(6,182,212,0.04), rgba(124,58,237,0.03));border:1px solid rgba(15,23,36,0.03);display:flex;gap:20px;align-items:center}
     .why h3{margin:0 0 8px}
     .why li{color:var(--muted);margin:8px 0;font-weight:700}
@@ -106,7 +99,6 @@
     }
     .send{margin-top:12px;padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent3),var(--accent1));color:white;font-weight:800;cursor:pointer}
 
-    /* FOOTER */
     footer{margin-top:38px;padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
 
     /* RESPONSIVE */
@@ -116,33 +108,26 @@
       .contact-grid{grid-template-columns:1fr}
     }
     @media (max-width:720px){
-      nav ul{display:none}
-      .hamburger{display:inline-block}
       .hero{grid-template-columns:1fr;gap:18px;padding:28px 0}
       h1{font-size:28px}
       .plans-grid{grid-template-columns:1fr}
       .hero-card{order:2}
-      .mobile-menu{display:none}
-      .mobile-menu.open{display:block;padding:10px 0}
     }
 
-    /* small animation */
-    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .6s forwards}
-    @keyframes fadeUp{to{opacity:1;transform:none}}
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav" role="navigation" aria-label="Main navigation">
-      <div class="brand" aria-hidden="false">
-        <div class="logo" aria-hidden="true">R</div>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">R</div>
         <div>
           <div style="font-size:13px;color:var(--muted);margin-bottom:2px">Build With</div>
           <div style="font-size:18px;font-weight:800;color:#071132">Ritik Jatav</div>
         </div>
       </div>
 
-      <nav aria-label="Primary">
+      <nav>
         <ul>
           <li><a href="#plans">Plans</a></li>
           <li><a href="#why">Why Us</a></li>
@@ -153,24 +138,16 @@
       <div style="display:flex;align-items:center;gap:12px">
         <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Quote</button>
         <button class="cta">Start Free Trial</button>
-        <button class="hamburger" id="hambBtn" aria-label="Open menu">☰</button>
       </div>
-    </div>
-
-    <div class="container mobile-menu" id="mobileMenu" aria-hidden="true" style="display:none">
-      <a href="#plans">Plans</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <main class="container" style="padding-bottom:20px">
+  <main class="container">
     <!-- HERO -->
-    <section class="hero" style="margin-top:18px">
-      <div class="fade-up" style="--delay:0s">
-        <div class="tag">Premium • Clean • Colorful</div>
-        <h1>Colorful & Clean Hosting — Built to Perform</h1>
-        <p class="lead">Build With Ritik Jatav offers fast, secure hosting with simple pricing and excellent support — designed for creators, startups, and agencies.</p>
+    <section class="hero">
+      <div>
+        <h1>Fast & Secure Hosting — Built With Ritik Jatav</h1>
+        <p class="lead">We provide lightning-fast web hosting with advanced security, 24/7 support, and reliable uptime — so you can focus on growing your business.</p>
 
         <div class="hero-actions">
           <button class="cta">Start Free Trial</button>
@@ -183,7 +160,7 @@
         </div>
       </div>
 
-      <div class="hero-card fade-up" style="--delay:.06s">
+      <div class="hero-card">
         <h3 style="margin:0 0 6px">Perfect for</h3>
         <p style="color:var(--muted);margin:0 0 12px">Small businesses, blogs, e-commerce & SaaS.</p>
 
@@ -202,135 +179,14 @@
     </section>
 
     <!-- PLANS -->
-    <section id="plans" class="plans fade-up">
+    <section id="plans" class="plans">
       <h2 style="margin:0;font-size:26px">Our Hosting Plans</h2>
       <p style="color:var(--muted);margin-top:6px">Flexible pricing — personal to enterprise.</p>
 
-      <div class="plans-grid" style="margin-top:16px">
-        <div class="card fade-up">
+      <div class="plans-grid">
+        <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div style="font-weight:800">Starter</div>
             <div class="pill">Popular</div>
           </div>
-          <div class="price">₹399 <span style="font-size:13px;color:var(--muted);font-weight:700">/mo</span></div>
-          <div class="benefits">
-            <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
-              <li>1 Website • 10GB NVMe</li>
-              <li>Free SSL • Daily Backups</li>
-              <li>1-click Installer</li>
-            </ul>
-          </div>
-          <div style="margin-top:12px"><button class="cta">Buy Now</button></div>
-        </div>
-
-        <div class="card fade-up" style="border:1px solid rgba(124,58,237,0.12);background:linear-gradient(180deg,#fff,#fffbff)">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800">Business</div>
-            <div class="pill">Best Value</div>
-          </div>
-          <div class="price">₹999 <span style="font-size:13px;color:var(--muted);font-weight:700">/mo</span></div>
-          <div class="benefits">
-            <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
-              <li>5 Websites • 50GB NVMe</li>
-              <li>Priority Support • Staging</li>
-              <li>Optimized Caching</li>
-            </ul>
-          </div>
-          <div style="margin-top:12px"><button class="cta">Buy Now</button></div>
-        </div>
-
-        <div class="card fade-up">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800">Enterprise</div>
-            <div class="pill">Custom</div>
-          </div>
-          <div class="price">Custom</div>
-          <div class="benefits">
-            <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
-              <li>Dedicated Resources</li>
-              <li>Managed Migrations</li>
-              <li>Dedicated Support</li>
-            </ul>
-          </div>
-          <div style="margin-top:12px"><button class="cta">Contact Sales</button></div>
-        </div>
-      </div>
-
-      <!-- WHY -->
-      <div id="why" class="why fade-up" style="margin-top:18px">
-        <div style="flex:1">
-          <h3 style="margin:0 0 8px">Why Build With Ritik Jatav?</h3>
-          <p style="color:var(--muted);margin:0 0 8px">A clean, colorful hosting platform built for performance and simplicity.</p>
-          <ul style="padding-left:18px;margin-top:8px">
-            <li>⚡ NVMe & HTTP/3</li>
-            <li>🔒 Enterprise-grade security</li>
-            <li>📞 24/7 Indian support</li>
-            <li>🔁 Easy backups & staging</li>
-          </ul>
-        </div>
-
-        <div style="width:200px;text-align:right">
-          <div style="font-weight:800;font-size:16px">Trusted by</div>
-          <div style="font-size:26px;font-weight:900;margin-top:6px">1.2M+</div>
-          <div style="color:var(--muted);margin-top:6px">customers worldwide</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact fade-up">
-      <div class="contact-grid">
-        <div class="form">
-          <h3 style="margin:0">Get in touch</h3>
-          <p style="color:var(--muted);margin-top:6px">Questions about plans or need a custom quote? Message us and we'll respond ASAP.</p>
-
-          <input type="text" placeholder="Your name" aria-label="Your name" />
-          <input type="text" placeholder="Your email or phone" aria-label="Your email or phone" />
-          <textarea rows="4" placeholder="How can we help?" aria-label="Message"></textarea>
-          <button class="send" onclick="alert('Thanks! Message sent (demo).')">Send Message</button>
-        </div>
-
-        <div>
-          <h3 style="margin:0 0 8px">Contact Info</h3>
-          <p style="color:var(--muted);margin:6px 0">📞 Phone: <a href="tel:+918305921216" style="color:#071132;font-weight:800;text-decoration:none">8305921216</a></p>
-          <p style="color:var(--muted);margin:6px 0">✉️ Email: <a href="mailto:ritikjatav7828@gmail.com" style="color:#071132;font-weight:800;text-decoration:none">ritikjatav7828@gmail.com</a></p>
-          <p style="color:var(--muted);margin:6px 0">📍 Indore, India</p>
-
-          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-            <a href="mailto:ritikjatav7828@gmail.com" class="btn-outline" style="text-decoration:none">Email Us</a>
-            <a href="tel:+918305921216" class="cta" style="text-decoration:none">Call Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-        <div>© <strong>Build With Ritik Jatav</strong> — All rights reserved.</div>
-        <div style="color:var(--muted)">Made with ❤️ by Ritik Jatav</div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Mobile menu toggle
-    const hamb = document.getElementById('hambBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    let open = false;
-    hamb && hamb.addEventListener('click', ()=>{
-      open = !open;
-      mobileMenu.style.display = open ? 'block' : 'none';
-      mobileMenu.setAttribute('aria-hidden', !open);
-      hamb.textContent = open ? '✕' : '☰';
-    });
-
-    // Fade-up animation on load
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('.fade-up').forEach((el,i)=>{
-        el.style.animationDelay = (i*0.06) + 's';
-        el.classList.add('fade-up');
-      });
-    });
-  </script>
-</body>
-</html>
+          <div class="price">₹399 <span style="font-size
