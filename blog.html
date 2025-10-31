@@ -1,126 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog | Ritik Jatav</title>
+  <title>Blog — Ritik Jatav</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RRQD4507"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D0RRQD4507');
-  </script>
-
-  <style>
-    body {
-      background: #f4f6f8;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header.site-header {
-      text-align: center;
-      padding: 28px 0;
-      color: white;
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-    }
-    a.nav {
-      color: white;
-      margin: 0 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .blog-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-    .post-list {
-      display: grid;
-      gap: 18px;
-    }
-    .post-card {
-      background: #fff;
-      color: #111;
-      padding: 18px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease;
-    }
-    .post-card:hover {
-      transform: translateY(-5px);
-    }
-    .post-card h3 {
-      margin: 0 0 8px;
-    }
-    .post-meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 10px;
-    }
-    .excerpt {
-      color: #333;
-      line-height: 1.6;
-    }
-    a.read-more {
-      display: inline-block;
-      margin-top: 12px;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    a.read-more:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      background: #222;
-      color: #ccc;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
-    <h1>Ritik Jatav — Blog</h1>
-    <p>Brand promotion, web tips & short tutorials</p>
-    <p>
-      <a class="nav" href="index.html">Home</a>
-      <a class="nav" href="brands.html">Brands</a>
-      <a class="nav" href="about.html">About</a>
-      <a class="nav" href="contact.html">Contact</a>
-    </p>
+    <div class="container nav-row">
+      <a class="brand" href="index.html">Ritik Jatav</a>
+      <button id="nav-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <nav id="nav"><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="brands.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="btn-outline">Contact</a></li></ul></nav>
+    </div>
   </header>
 
-  <main class="blog-container">
-    <section class="post-list">
+  <main class="container" style="padding-top:36px;padding-bottom:48px;">
+    <h1>Blog</h1>
+    <div class="post-grid">
       <article class="post-card">
-        <h3><a href="posts/how-to-promote-brands.html">How to promote brands online — step by step</a></h3>
-        <div class="post-meta">May 1, 2025 • 8 min read</div>
-        <p class="excerpt">
-          Simple step-by-step guide to start promoting other brands online — pick your niche, collect images, create posts, and get traffic.
-        </p>
-        <a class="read-more" href="posts/how-to-promote-brands.html">Read full article →</a>
+        <h3><a href="posts/how-to-create-a-blog.html">How to create a blog</a></h3>
+        <p>Step-by-step guide to start writing and promoting your content.</p>
       </article>
 
       <article class="post-card">
-        <h3><a href="posts/how-to-create-a-blog.html">How to Create a Blog</a></h3>
-        <div class="post-meta">October 30, 2025 • 6 min read</div>
-        <p class="excerpt">
-          Learn how to create your own blog using HTML and GitHub Pages in just a few simple steps.
-        </p>
-        <a class="read-more" href="posts/how-to-create-a-blog.html">Read full article →</a>
+        <h3><a href="posts/how-to-promote-brands.html">How to promote brands</a></h3>
+        <p>Practical tips for brand campaigns and creative planning.</p>
       </article>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 Ritik Jatav | All Rights Reserved</p>
-  </footer>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-left"><a class="brand" href="index.html">Ritik Jatav</a></div><div class="footer-right"><p class="muted">© <span id="year"></span> Ritik Jatav</p></div></div></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
